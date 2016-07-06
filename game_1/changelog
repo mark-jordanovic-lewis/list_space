@@ -1,0 +1,18 @@
+Changelog for game 1, the monster chase
+
+
+2/9/12
+======
+	built the basics already.
+	grid holds and builds the 2d plane
+	pointerSpace is the place we run around in
+	pointerSpace.rb is the ui and game space
+
+	log
+	===
+	Added grid class, started to wrtie initialise and build 2d plane method.
+7/9/12
+======
+	done a bit more on the grid creation
+	added point types
+	testing based on point staticness and friendliness concept

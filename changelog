@@ -1,0 +1,68 @@
+pointerSpace is a simple class which provides connectivity information about structures whose parts may or may not interact with each other.
+The list is dynamic, in that it may point at any other member of the list, however it may not be populated with anythign that is not a member of the list.
+On top of this structure may be mapped many things, immediately springing to mind are the many physical structures present in the universe, those that we
+arbitrarily name as separate and form rules for their behaviours (nucleons), and, those that are obviously separate in our experience (atoms etc).
+
+This is a second attempt at a bottom up physics engine. Interactions are the primay objects in physics and this is supposed to represent that.
+
+It is simple to map, using the addresses getter method, which gives us the addresses of each member of the list.
+Changing interactions may be traced through the 'state' getter method.
+
+Constructor
+-----------
+	takes an int argument defining the length of the list<list<list::iterator> (exist) to be made.
+	each member (list<list::iterator>, existence) of exist is populated with one member, which points to the first entry of that list
+	(the iterator is essentially pointing at itself).
+	the int nExistences is set at the size of exist.
+	the history count histories is set to zero, to be counted each time the state method is accessed.
+
+Return Methods
+--------------
+furthests
+---------
+	returns a list<list::iterator> populated with the last member of each of the members of exist
+
+closest
+-------
+	returns a list<list::iterator> populated with the first (pointing at self if not changed) member of each of the members of exist
+
+closests
+--------
+	returns a list<list::iterator> populated with the second member of each of the members of exist
+
+size
+----
+	returns the size of exist, currently unchangable
+
+addresses
+---------
+	returns the address of each of the members of exist. (should correspond to return of closest)
+
+myFriends
+---------
+	takes an integer, N, as argument, iterates through exist until the element corresponding to N, and returns that existence
+
+friendsWith
+-----------
+	checks to see if two existences contain each other, returns true if so, else retunrs false
+
+
+Manipulation methods
+--------------------
+shortenAll
+----------
+	takes integer argument, n, and shortens all existences, from the back, to that size. returns the number of existences that have size smaller than N
+
+meet
+----
+	takes 2 list<list::iterator> arguments and, if they are not friendsWith each other, adds them to each other. if arg1 knows arg2 it returns 1, if arg2
+	knows arg1 it returns -1. if they are already both friends then it returns 2.
+
+meetAll
+-------
+	pushes the address of each element in exist, from first to last, into each existence.
+
+
+
+
+
